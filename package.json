@@ -1,0 +1,26 @@
+{
+  "name": "moleculer-healthcheck-mongo-middleware",
+  "version": "0.0.0",
+  "description": "Wrapper of moleculer-healthcheck-middleware to check liveness of Mongo",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "npm install",
+    "test": "ava",
+    "pretest:debug": "npm run pretest",
+    "test:debug": "ava debug --host 0.0.0.0 --port 9229"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^3.5.0",
+    "moleculer-repl": "^0.6.3",
+    "nodemon": "^2.0.2",
+    "@r2d2bzh/moleculer-healthcheck-middleware": "https://github.com/vivien-lelouette/moleculer-healthcheck-middleware"
+  },
+  "dependencies": {
+    "moleculer": "^0.14.4",
+    "moleculer-db": "^0.8.5",
+    "moleculer-db-adapter-mongo": "^0.4.7",
+    "nats": "^1.4.2"
+  }
+}
