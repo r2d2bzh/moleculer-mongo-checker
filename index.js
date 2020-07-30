@@ -13,13 +13,13 @@ module.exports = {
 function createLivenessChecker(broker) {
   return (next) => {
     let error;
-    const servicesWithAdapter = broker.services.filter((service) => hasMongoAdapter(service));
+    const servicesWithAdapter = broker.services.filter(hasMongoAdapter);
     if (servicesWithAdapter.length > 0) {
       servicesWithAdapter.forEach((service) => {
         try {
-          assert(adapterIsConnected(service.adapter));
+          assert(adapterIsConnected(service.adapter), 'Moleculer database adapter not connected');
         } catch (e) {
-          error = 'Moleculer database adapter not connected';
+          error = e.message;
           broker.getLogger('healthcheck').error(error);
         }
         next(error);
