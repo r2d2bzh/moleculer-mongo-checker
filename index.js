@@ -19,7 +19,7 @@ function createLivenessChecker(broker) {
         try {
           assert(adapterIsConnected(service.adapter));
         } catch (e) {
-          error = e;
+          error = 'Moleculer database adapter not connected';
           broker.getLogger('healthcheck').error(error);
         }
         next(error);
