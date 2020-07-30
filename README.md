@@ -1,6 +1,6 @@
 # moleculer-mongo-checker
 
-This project provides checkers for [moleculer-healthcheck-middleware](https://github.com/r2d2bzh/moleculer-healthcheck-middleware) to MongoDB for project using [moleculer-db-adapter-mongo](https://github.com/moleculerjs/moleculer-db/tree/master/packages/moleculer-db-adapter-mongo).
+This project provides health checkers for [moleculer-healthcheck-middleware](https://github.com/r2d2bzh/moleculer-healthcheck-middleware) for project using [moleculer-db-adapter-mongo](https://github.com/moleculerjs/moleculer-db/tree/master/packages/moleculer-db-adapter-mongo).
 
 
 ## Usage
