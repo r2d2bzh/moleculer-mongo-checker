@@ -12,9 +12,11 @@ module.exports = {
  */
 function createLivenessChecker(broker) {
   return (next) => {
-    let error;
     const servicesWithAdapter = broker.services.filter(hasMongoAdapter);
-    if (servicesWithAdapter.length > 0) {
+    if (servicesWithAdapter.length === 0) {
+      next();
+    } else {
+      let error;
       servicesWithAdapter.forEach((service) => {
         try {
           assert(adapterIsConnected(service.adapter), 'Moleculer database adapter not connected');
@@ -23,9 +25,7 @@ function createLivenessChecker(broker) {
           broker.getLogger('healthcheck').error(error);
         }
         next(error);
-      })
-    } else {
-      next('No services with adapters');
+      });
     }
   }
 };

@@ -71,7 +71,7 @@ test('healthcheck answers a 200 when mongo is up', async (t) => {
   t.deepEqual(response.status, 200);
 });
 
-test('healthcheck answers a 503 when no adapter is found', async (t) => {
+test('healthcheck answers a 200 when no adapter is found', async (t) => {
   await startBroker(t, [
     {
       name: 'noAdapter',
@@ -79,7 +79,7 @@ test('healthcheck answers a 503 when no adapter is found', async (t) => {
   ]);
   const port = t.context.healthport;
   const response = await fetch(`http://127.0.0.1:${port}/live`).catch(error => error);
-  t.deepEqual(response.status, 503);
+  t.deepEqual(response.status, 200);
 });
 
 test('healthcheck should only be called on Mongo adapter', async (t) => {
