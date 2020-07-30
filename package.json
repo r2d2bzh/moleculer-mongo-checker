@@ -7,7 +7,7 @@
     "pretest": "npm install",
     "test": "ava",
     "pretest:debug": "npm run pretest",
-    "test:debug": "ava debug --host 0.0.0.0 --port 9229"
+    "test:debug": "ava debug --host 0.0.0.0"
   },
   "author": "",
   "license": "ISC",
