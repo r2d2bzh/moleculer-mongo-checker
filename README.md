@@ -11,7 +11,7 @@ This project gives createChecker functions to use with [moleculer-healthcheck-mi
 
 ```js
 const HealthMiddleware = require('@r2d2bzh/moleculer-healthcheck-middleware');
-const HealthcheckMongo = require('moleculer-mongo-healthcheck');
+const MongoHealthcheck = require('@r2d2bzh/moleculer-mongo-healthcheck');
 
 const broker = new ServiceBroker({
   middlewares: [
