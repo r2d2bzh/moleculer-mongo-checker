@@ -15,7 +15,7 @@
     "ava": "^3.5.0",
     "moleculer-repl": "^0.6.3",
     "nodemon": "^2.0.2",
-    "@r2d2bzh/moleculer-healthcheck-middleware": "https://github.com/r2d2bzh/moleculer-healthcheck-middleware"
+    "@r2d2bzh/moleculer-healthcheck-middleware": "https://github.com/r2d2bzh/moleculer-healthcheck-middleware#0.0.0"
   },
   "dependencies": {
     "moleculer": "^0.14.4",
