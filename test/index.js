@@ -33,7 +33,11 @@ const startBroker = async (t, services, healthCheckOpts = {}) => {
 
   t.context.broker = broker;
   t.context.healthport = port;
-}
+};
+
+const realAdapter = () => new MongoDBAdapter('mongodb://localhost', {
+  connectTimeoutMS: 100,
+});
 
 const mockAdapter = (t) => {
   return {
@@ -51,10 +55,18 @@ const mockAdapter = (t) => {
   }
 };
 
+// This is a temporary workaround for https://github.com/avajs/ava/issues/1378.
+// It occurs when the mongo engine is not up, the MongoClient will loop forever
+// to initiate its first connection.
+test.beforeEach((t) => {
+  t.context.timeout = setTimeout(() => process.exit(1), 3000);
+});
+
 test.afterEach.always(async (t) => {
   if(t.context.broker) {
     await t.context.broker.stop();
   }
+  clearTimeout(t.context.timeout);
 });
 
 test('healthcheck answers a 200 when mongo is up', async (t) => {
@@ -62,7 +74,7 @@ test('healthcheck answers a 200 when mongo is up', async (t) => {
     {
       name: 'adapterMongo',
       mixins: [DbService],
-      adapter: new MongoDBAdapter('mongodb://localhost'),
+      adapter: realAdapter(),
       collection: 'posts',
     }
   ]);
@@ -87,7 +99,7 @@ test('healthcheck should only be called on Mongo adapter', async (t) => {
     {
       name: 'adapterMongo',
       mixins: [DbService],
-      adapter: new MongoDBAdapter('mongodb://localhost'),
+      adapter: realAdapter(),
       collection: 'posts',
     },
     {
