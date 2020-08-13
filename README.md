@@ -3,7 +3,7 @@
 This project provides health checkers for [moleculer-healthcheck-middleware](https://github.com/r2d2bzh/moleculer-healthcheck-middleware) for projects using [moleculer-db-adapter-mongo](https://github.com/moleculerjs/moleculer-db/tree/master/packages/moleculer-db-adapter-mongo).
 
 
-## Usage
+## Usages
 
 This project gives createChecker functions to use with [moleculer-healthcheck-middleware](https://github.com/r2d2bzh/moleculer-healthcheck-middleware).
 
