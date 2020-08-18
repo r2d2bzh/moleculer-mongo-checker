@@ -1,6 +1,6 @@
 {
   "name": "moleculer-healthcheck-mongo-middleware",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Checkers for moleculer-healthcheck-middleware to check liveness of Mongo",
   "main": "index.js",
   "scripts": {
