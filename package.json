@@ -16,14 +16,11 @@
   },
   "devDependencies": {
     "@r2d2bzh/moleculer-healthcheck-middleware": "0.0.2",
-    "ava": "^3.5.0",
-    "moleculer-repl": "^0.6.3",
-    "nodemon": "^2.0.2"
+    "ava": "^3.11.1",
+    "moleculer": "^0.14.9",
+    "moleculer-db": "^0.8.9"
   },
   "dependencies": {
-    "moleculer": "^0.14.4",
-    "moleculer-db": "^0.8.5",
-    "moleculer-db-adapter-mongo": "^0.4.7",
-    "nats": "^1.4.2"
+    "moleculer-db-adapter-mongo": "^0.4.7"
   }
 }
