@@ -1,5 +1,5 @@
 {
-  "name": "moleculer-healthcheck-mongo-middleware",
+  "name": "@r2d2bzh/moleculer-mongo-checker",
   "version": "0.0.1",
   "description": "Checkers for moleculer-healthcheck-middleware to check liveness of Mongo",
   "main": "index.js",
@@ -15,10 +15,10 @@
     "access": "public"
   },
   "devDependencies": {
+    "@r2d2bzh/moleculer-healthcheck-middleware": "0.0.2",
     "ava": "^3.5.0",
     "moleculer-repl": "^0.6.3",
-    "nodemon": "^2.0.2",
-    "@r2d2bzh/moleculer-healthcheck-middleware": "https://github.com/r2d2bzh/moleculer-healthcheck-middleware#0.0.0"
+    "nodemon": "^2.0.2"
   },
   "dependencies": {
     "moleculer": "^0.14.4",
