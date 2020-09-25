@@ -16,8 +16,8 @@
   },
   "devDependencies": {
     "@r2d2bzh/moleculer-healthcheck-middleware": "0.0.2",
-    "ava": "^3.11.1",
-    "moleculer": "^0.14.9",
+    "ava": "^3.12.1",
+    "moleculer": "^0.14.10",
     "moleculer-db": "^0.8.9"
   },
   "dependencies": {
