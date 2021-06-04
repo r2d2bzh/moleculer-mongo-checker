@@ -18,6 +18,7 @@ const startBroker = async (t, services, healthCheckOpts = {}) => {
       port: 0,
       ...healthCheckOpts
     })],
+    logLevel: 'warn',
   });
   services.forEach(service => {
     broker.createService(service);
@@ -79,7 +80,7 @@ test('healthcheck answers a 200 when mongo is up', async (t) => {
     }
   ]);
   const port = t.context.healthport;
-  const response = await fetch(`http://127.0.0.1:${port}/live`).catch(error => error);
+  const response = await fetch(`http://127.0.0.1:${port}/live`);
   t.deepEqual(response.status, 200);
 });
 
@@ -90,7 +91,7 @@ test('healthcheck answers a 200 when no adapter is found', async (t) => {
     }
   ]);
   const port = t.context.healthport;
-  const response = await fetch(`http://127.0.0.1:${port}/live`).catch(error => error);
+  const response = await fetch(`http://127.0.0.1:${port}/live`);
   t.deepEqual(response.status, 200);
 });
 
@@ -109,6 +110,6 @@ test('healthcheck should only be called on Mongo adapter', async (t) => {
     }
   ]);
   const port = t.context.healthport;
-  const response = await fetch(`http://127.0.0.1:${port}/live`).catch(error => error);
+  const response = await fetch(`http://127.0.0.1:${port}/live`);
   t.deepEqual(response.status, 200);
 });

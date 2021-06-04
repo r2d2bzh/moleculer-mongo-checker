@@ -1,6 +1,6 @@
 {
   "name": "@r2d2bzh/moleculer-mongo-checker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Checkers for moleculer-healthcheck-middleware to check liveness of Mongo",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "@r2d2bzh/moleculer-healthcheck-middleware": "0.0.2",
+    "@r2d2bzh/moleculer-healthcheck-middleware": "0.0.5",
     "ava": "^3.12.1",
     "moleculer": "^0.14.10",
     "moleculer-db": "^0.8.9"
