@@ -1,6 +1,6 @@
 {
   "name": "@r2d2bzh/moleculer-mongo-checker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Checkers for moleculer-healthcheck-middleware to check liveness of Mongo",
   "main": "index.js",
   "scripts": {
