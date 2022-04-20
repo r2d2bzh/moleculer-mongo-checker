@@ -4,9 +4,11 @@
   "description": "Checkers for moleculer-healthcheck-middleware to check liveness of Mongo",
   "main": "index.js",
   "scripts": {
-    "pretest": "npm install",
+    "pretest": "npm install && docker-compose up -d",
+    "posttest": "docker-compose down",
     "test": "ava",
     "pretest:debug": "npm run pretest",
+    "posttest:debug": "npm run posttest",
     "test:debug": "ava debug"
   },
   "author": "",

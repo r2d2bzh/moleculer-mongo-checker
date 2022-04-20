@@ -6,12 +6,8 @@ services:
   - docker
 install:
   - npm i
-before_script:
-  - docker-compose up -d
 script:
   - npm test
-after_script:
-  - docker-compose down
 deploy:
   provider: npm
   email: gautaz@users.noreply.github.com

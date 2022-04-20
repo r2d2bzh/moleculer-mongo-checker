@@ -1,7 +1,5 @@
-version: "3.7"
-
 services:
   mongo:
-    image: mongo:4.2.2-bionic
+    image: mongo:4.2.19-bionic
     ports:
       - 27017:27017
