@@ -1,5 +1,4 @@
 const assert = require('assert');
-const MongoDBAdapter = require('moleculer-db-adapter-mongo');
 
 module.exports = {
   createLivenessChecker
@@ -27,7 +26,7 @@ function createLivenessChecker(broker) {
 
 function hasMongoAdapter(moleculerService) {
   const adapter = moleculerService.adapter;
-  return adapter && adapter instanceof MongoDBAdapter;
+  return adapter && adapter.service && adapter.service.name === 'adapterMongo';
 };
 
 function adapterIsConnected(adapter) {

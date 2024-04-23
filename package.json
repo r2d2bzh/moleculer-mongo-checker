@@ -17,12 +17,10 @@
     "access": "public"
   },
   "devDependencies": {
-    "@r2d2bzh/moleculer-healthcheck-middleware": "^1.0.6",
-    "ava": "^5.2.0",
-    "moleculer": "^0.14.28",
-    "moleculer-db": "^0.8.22"
-  },
-  "dependencies": {
-    "moleculer-db-adapter-mongo": "^0.4.17"
+    "@r2d2bzh/moleculer-healthcheck-middleware": "^2.0.2",
+    "ava": "^6.1.2",
+    "moleculer": "^0.14.33",
+    "moleculer-db": "^0.8.25",
+    "moleculer-db-adapter-mongo": "^0.4.19"
   }
 }
