@@ -1,10 +1,10 @@
-const test = require('ava');
-const { ServiceBroker } = require('moleculer');
-const fetch = require('node-fetch');
-const MongoHealthcheck = require('..');
-const HealthMiddleware = require('@r2d2bzh/moleculer-healthcheck-middleware');
-const DbService = require('moleculer-db');
-const MongoDBAdapter = require('moleculer-db-adapter-mongo');
+import test from 'ava';
+import { ServiceBroker } from 'moleculer';
+import fetch from 'node-fetch';
+import MongoHealthcheck from '../index.js';
+import HealthMiddleware from '@r2d2bzh/moleculer-healthcheck-middleware';
+import DbService from 'moleculer-db';
+import MongoDBAdapter from 'moleculer-db-adapter-mongo';
 
 const event = (emitter, eventName) =>
   new Promise((resolve) => emitter.once(eventName, resolve));

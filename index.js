@@ -1,15 +1,11 @@
-const assert = require('assert');
-
-module.exports = {
-  createLivenessChecker
-};
+import assert from 'assert';
 
 /**
  * Creates a Healthcheck checker for Mongo liveness
  * This must be passed as a parameter to the HealthMiddleware liveness.createChecker
  * @param {Object} broker to check liveness
  */
-function createLivenessChecker(broker) {
+const createLivenessChecker = (broker) => {
   return (callback) => {
     try {
       broker.services
@@ -24,12 +20,16 @@ function createLivenessChecker(broker) {
   }
 };
 
-function hasMongoAdapter(moleculerService) {
+const hasMongoAdapter = (moleculerService) => {
   const adapter = moleculerService.adapter;
   return adapter && adapter.service && adapter.service.name === 'adapterMongo';
 };
 
-function adapterIsConnected(adapter) {
+const adapterIsConnected = (adapter) => {
   const db = adapter.client.db();
   return db.topology.isConnected();
+};
+
+export default {
+  createLivenessChecker
 };
