@@ -7,12 +7,13 @@
   "type": "module",
   "scripts": {
     "pretest": "npm install && docker-compose up -d",
-    "posttest": "docker-compose down",
+    "posttest": "docker-compose down && npm run build:types",
     "test": "ava",
     "pretest:debug": "npm run pretest",
     "posttest:debug": "npm run posttest",
     "test:debug": "ava debug",
-    "build:types": "tsc --declaration --allowJs --emitDeclarationOnly index.js"
+    "build:types": "tsc --declaration --allowJs --emitDeclarationOnly index.js",
+    "release": "release-it"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +28,8 @@
     "moleculer-db-adapter-mongo": "^0.4.21",
     "eslint": "^9.35.0",
     "@r2d2bzh/eslint-config": "^2.0.1",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "release-it": "^19.0.4",
+    "@release-it/conventional-changelog": "^10.0.1"
   }
 }
