@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/r2d2bzh/moleculer-mongo-checker/compare/1.2.1...1.2.2) (2025-09-11)
+
+
+### Bug Fixes
+
+* **ci:** Fix docker compose usage ([01554e2](https://github.com/r2d2bzh/moleculer-mongo-checker/commit/01554e2568670b93da96dcf73c9ec4d7b2aff566))
+
 ## [1.2.1](https://github.com/r2d2bzh/moleculer-mongo-checker/compare/1.2.0...1.2.1) (2025-09-11)
 
 
