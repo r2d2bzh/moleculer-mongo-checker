@@ -1,5 +1,5 @@
 declare namespace _default {
-    export { createLivenessChecker };
+  export { createLivenessChecker };
 }
 export default _default;
 /**
@@ -7,4 +7,4 @@ export default _default;
  * This must be passed as a parameter to the HealthMiddleware liveness.createChecker
  * @param {Object} broker to check liveness
  */
-declare function createLivenessChecker(broker: any): (callback: any) => void;
+declare function createLivenessChecker(broker: object): (callback: any) => void;

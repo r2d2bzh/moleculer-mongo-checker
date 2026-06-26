@@ -1,4 +1,4 @@
-import assert from 'assert';
+import assert from 'node:assert';
 
 /**
  * Creates a Healthcheck checker for Mongo liveness
@@ -8,16 +8,17 @@ import assert from 'assert';
 const createLivenessChecker = (broker) => {
   return (callback) => {
     try {
-      broker.services
-        .filter(hasMongoAdapter)
-        .forEach((service) => assert(adapterIsConnected(service.adapter), 'Moleculer database adapter not connected'));
+      const mongoServices = broker.services.filter((service) => hasMongoAdapter(service));
+      for (const service of mongoServices) {
+        assert.ok(adapterIsConnected(service.adapter), 'Moleculer database adapter not connected');
+      }
       callback();
-    } catch (e) {
-      const error = e.message || e;
+    } catch (error_) {
+      const error = error_.message || error_;
       broker.getLogger('moleculer-mongo-checker').warn(error);
       callback(error);
     }
-  }
+  };
 };
 
 const hasMongoAdapter = (moleculerService) => {
@@ -26,10 +27,10 @@ const hasMongoAdapter = (moleculerService) => {
 };
 
 const adapterIsConnected = (adapter) => {
-  const db = adapter.client.db();
-  return db.topology.isConnected();
+  const database = adapter.client.db();
+  return database.topology.isConnected();
 };
 
 export default {
-  createLivenessChecker
+  createLivenessChecker,
 };
